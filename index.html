@@ -15,11 +15,12 @@
         <div class="top_bar">
 
             <!-- logo -->
-
-            <div class="logo">
-                <i class="fa-solid fa-bag-shopping"></i>
-                <span> Brand </span>
-            </div>
+            <a href="index.html" style="text-decoration:none; color:inherit;">
+                <div class="logo">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span> Brand </span>
+                </div>
+            </a>
             <!--search  bar-->
             <div class="Search_bar">
                 <input type="text" placeholder="Search" />
@@ -50,7 +51,17 @@
         </div>
         <!--ROw 2-->
         <nav class="navbar">
-            <a href="#">All Category</a>
+            <div class="nav-all-category" onclick="toggleDropdown()">
+                <i class="fa-solid fa-bars"></i> All Category
+                <div class="category-dropdown" id="categoryDropdown">
+                    <a href="#">Electronics</a>
+                    <a href="#">Clothing</a>
+                    <a href="#">Home & Garden</a>
+                    <a href="#">Sports</a>
+                    <a href="#">Toys</a>
+                </div>
+            </div>
+
             <a href="#">Hot offers</a>
             <a href="#">Gift boxes</a>
             <a href="#">Projects</a>
@@ -61,7 +72,12 @@
                 <select>
                     <option>English, USD</option>
                 </select>
-                <span>DE Ship to</span>
+                <span class="ship-to">
+                    Ship to
+                    <img src="images/DE@2x.png" alt="Germany" class="flag-icon" />
+                    <i class="fa-solid fa-chevron-down"></i>
+                </span>
+
             </div>
 
         </nav>
@@ -84,7 +100,7 @@
             </div>
             <!--Middle banner-->
             <div class="hero-banner">
-                <h2>Latest Trending</h2>
+                <h2>Latest trending</h2>
                 <h1>Electronic items</h1>
                 <button class="learn-btn">Learn More</button>
             </div>
@@ -109,19 +125,19 @@
         </section>
         <!--Deals and offer-->
         <section class="Deals-section">
-            <div class="deals-header">
-                <div>
-                    <h3>Deals and offer</h3>
-                    <p>Hygiene and offers</p>
+            <div class="deals-grid-wrapper">
+                <div class="deals-header-compact">
+                    <div>
+                        <h3>Deals and offer</h3>
+                        <p>Hygiene and equipments</p>
+                    </div>
+                    <div class="timer">
+                        <div class="timer-box">04<small>Days</small></div>
+                        <div class="timer-box">13<small>Hour</small></div>
+                        <div class="timer-box">34<small>Min</small></div>
+                        <div class="timer-box">56<small>Sec</small></div>
+                    </div>
                 </div>
-                <div class="timer">
-                    <div class="timer-box">04<small>Days</small></div>
-                    <div class="timer-box">13<small>Hour</small></div>
-                    <div class="timer-box">34<small>Min</small></div>
-                    <div class="timer-box">56<small>Sec</small></div>
-                </div>
-            </div>
-            <div class="deals-products">
                 <div class="deal-card">
                     <img src="images/8.png" alt="Smart watches" />
                     <p>Smart Watches</p>
@@ -157,10 +173,12 @@
         </section>
         <!--Home and Category section-->
         <section class="category-section">
-            <div class="category-left">
-                <h3>Home and outdoor</h3>
-                <img src="images/Group 969.png" alt="outdoor" />
-                <button class="source-btn">Source now</button>
+            <div class="category-left"
+                style="background-image: url('images/Group 969.png'); background-size: cover; background-position: center; padding: 24px; border-radius: 8px; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+                <h3 style="color: #222; font-weight: 500; font-size: 18px;">Home and outdoor</h3>
+                <a href="products.html" class="source-btn"
+                    style="text-decoration:none; display:inline-block; width: fit-content; color: black;font-weight: 500;">Source
+                    now</a>
             </div>
             <div class="category-grid">
                 <div class="category-item">
@@ -173,7 +191,7 @@
 
                 <div class="category-item">
                     <div>
-                        <p>Sofa & chair</p>
+                        <p>Digital cameras</p>
                         <small>From USD 19</small>
                     </div>
                     <img src="images/6.png" alt="sofa" />
@@ -189,7 +207,7 @@
 
                 <div class="category-item">
                     <div>
-                        <p>Smart Watches</p>
+                        <p>Kitchen pot</p>
                         <small>From USD 19</small>
                     </div>
                     <img src="images/3.png" alt="watch" />
@@ -206,7 +224,7 @@
 
                 <div class="category-item">
                     <div>
-                        <p>Blenders</p>
+                        <p>Smart watches</p>
                         <small>From USD 39</small>
                     </div>
                     <img src="images/8.png" alt="chair" />
@@ -224,7 +242,7 @@
 
                 <div class="category-item">
                     <div>
-                        <p>Coffee maker</p>
+                        <p>Money plant</p>
                         <small>From USD 10</small>
                     </div>
                     <img src="images/image 89.png" alt="chair" />
@@ -243,10 +261,12 @@
 
         <!--Consumer Electric and Gadgets section-->
         <section class="consumer-section">
-            <div class="consumner-left">
-                <h3>Consumer electronics and gadgets</h3>
-                <img src="images/image 98.png" alt="consumer">
-                <button class="source-btn">Source now</button>
+            <div class="consumner-left"
+                style="background-image: url('images/image 98.png'); background-size: cover; background-position: center; padding: 24px; border-radius: 8px; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+                <h3 style="color: #222; font-weight: 500; font-size: 18px;">Consumer electronics and gadgets</h3>
+                <a href="products.html" class="source-btn"
+                    style="text-decoration:none; display:inline-block; width: fit-content;font-weight: 500;">Source
+                    now</a>
             </div>
             <div class="consumer-grid">
                 <div class="consumer-item">
@@ -275,7 +295,7 @@
 
                 <div class="consumer-item">
                     <div>
-                        <p>Smart watches</p>
+                        <p>Electric kettle for tea maker</p>
                         <small>From USD 19</small>
                     </div>
                     <img src="images/image 85.png" alt="Camera" />
@@ -307,7 +327,7 @@
 
                 <div class="consumer-item">
                     <div>
-                        <p>Electric kettle</p>
+                        <p>Samsung Glaxy A07</p>
                         <small>From USD 240</small>
                     </div>
                     <img src="images/image 33.png" alt="Camera" />
@@ -325,10 +345,12 @@
             <div class="quote-right">
                 <h4>Send quote to suppliers</h4>
                 <p>What item you need?</p>
-                <input type="text" placeholder="Type item name" />
+                <input type="text" placeholder="Type more details" />
                 <div class="quote-row">
                     <input type="text" placeholder="Quantity" />
-                    <input type="text" placeholder="Pcs" />
+                    <select>
+                        <option>Pcs</option>
+                    </select>
                 </div>
                 <button class="send-btn">Send inquiry</button>
             </div>
@@ -338,56 +360,76 @@
         <section class="recommended">
             <h3>Recommended items</h3>
             <div class="product-grid">
-                <div class="product-card">
-                    <img src="images/Bitmap.png" alt="" />
-                    <div class="price">$10.30</div>
-                    <div class="pname">T-shirts with multiple colors, for men</div>
-                </div>
-                <div class="product-card">
-                    <img src="images/2 1.png" alt="" />
-                    <div class="price">$10.30</div>
-                    <div class="pname">Brown winter coat medium size</div>
-                </div>
-                <div class="product-card">
-                    <img src="images/image 30.png" alt="" />
-                    <div class="price">$12.50</div>
-                    <div class="pname">Blue coat medium size</div>
-                </div>
-                <div class="product-card">
-                    <img src="images/image 24.png" alt="" />
-                    <div class="price">$34.00</div>
-                    <div class="pname">Blue wallet for men leather material</div>
-                </div>
-                <div class="product-card">
-                    <img src="images/image 26.png" alt="" />
-                    <div class="price">$99.00</div>
-                    <div class="pname">Jeans bag for travel for men</div>
-                </div>
-                <div class="product-card">
-                    <img src="images/Bitmap (2).png" alt="" />
-                    <div class="price">$9.99</div>
-                    <div class="pname">Jeans shorts for men</div>
-                </div>
-                <div class="product-card">
-                    <img src="images/image 86.png" alt="" />
-                    <div class="price">$8.99</div>
-                    <div class="pname">Headset for gaming</div>
-                </div>
-                <div class="product-card">
-                    <img src="images/image 26.png" alt="" />
-                    <div class="price">$99.00</div>
-                    <div class="pname">Jeans bag for travel for men</div>
-                </div>
-                <div class="product-card">
-                    <img src="images/3.png" alt="" />
-                    <div class="price">$10.30</div>
-                    <div class="pname">Kitchen pot clay</div>
-                </div>
-                <div class="product-card">
-                    <img src="images/image 85.png" alt="" />
-                    <div class="price">$80.95</div>
-                    <div class="pname">Electric kettle</div>
-                </div>
+                <a href="product-detail.html" style="text-decoration: none; color: inherit;">
+                    <div class="product-card">
+                        <img src="images/Bitmap.png" alt="" />
+                        <div class="price">$10.30</div>
+                        <div class="pname">T-shirts with multiple colors, for men</div>
+                    </div>
+                </a>
+                <a href="product-detail.html" style="text-decoration: none; color: inherit;">
+                    <div class="product-card">
+                        <img src="images/2 1.png" alt="" />
+                        <div class="price">$10.30</div>
+                        <div class="pname">Brown winter coat medium size</div>
+                    </div>
+                </a>
+                <a href="product-detail.html" style="text-decoration: none; color: inherit;">
+                    <div class="product-card">
+                        <img src="images/image 30.png" alt="" />
+                        <div class="price">$12.50</div>
+                        <div class="pname">Blue coat medium size</div>
+                    </div>
+                </a>
+                <a href="product-detail.html" style="text-decoration: none; color: inherit;">
+                    <div class="product-card">
+                        <img src="images/image 24.png" alt="" />
+                        <div class="price">$34.00</div>
+                        <div class="pname">Blue wallet for men leather material</div>
+                    </div>
+                </a>
+                <a href="product-detail.html" style="text-decoration: none; color: inherit;">
+                    <div class="product-card">
+                        <img src="images/image 26.png" alt="" />
+                        <div class="price">$99.00</div>
+                        <div class="pname">Jeans bag for travel for men</div>
+                    </div>
+                </a>
+                <a href="product-detail.html" style="text-decoration: none; color: inherit;">
+                    <div class="product-card">
+                        <img src="images/Bitmap (2).png" alt="" />
+                        <div class="price">$9.99</div>
+                        <div class="pname">Jeans shorts for men</div>
+                    </div>
+                </a>
+                <a href="product-detail.html" style="text-decoration: none; color: inherit;">
+                    <div class="product-card">
+                        <img src="images/image 86.png" alt="" />
+                        <div class="price">$8.99</div>
+                        <div class="pname">Headset for gaming</div>
+                    </div>
+                </a>
+                <a href="product-detail.html" style="text-decoration: none; color: inherit;">
+                    <div class="product-card">
+                        <img src="images/image 26.png" alt="" />
+                        <div class="price">$99.00</div>
+                        <div class="pname">Jeans bag for travel for men</div>
+                    </div>
+                </a>
+                <a href="product-detail.html" style="text-decoration: none; color: inherit;">
+                    <div class="product-card">
+                        <img src="images/3.png" alt="" />
+                        <div class="price">$10.30</div>
+                        <div class="pname">Kitchen pot clay</div>
+                    </div>
+                </a>
+                <a href="product-detail.html" style="text-decoration: none; color: inherit;">
+                    <div class="product-card">
+                        <img src="images/image 85.png" alt="" />
+                        <div class="price">$80.95</div>
+                        <div class="pname">Electric kettle</div>
+                    </div>
+                </a>
 
 
 
@@ -603,6 +645,12 @@
         </div>
 
     </footer>
+
+    <script>
+        function toggleDropdown() {
+            document.getElementById('categoryDropdown').classList.toggle('show');
+        }
+    </script>
 </body>
 
 </html>

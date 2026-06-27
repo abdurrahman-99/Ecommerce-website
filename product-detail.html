@@ -15,11 +15,12 @@
         <div class="top_bar">
 
             <!-- logo -->
-
-            <div class="logo">
-                <i class="fa-solid fa-bag-shopping"></i>
-                <span> Brand </span>
-            </div>
+            <a href="index.html" style="text-decoration:none; color:inherit;">
+                <div class="logo">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span> Brand </span>
+                </div>
+            </a>
             <!--search  bar-->
             <div class="Search_bar">
                 <input type="text" placeholder="Search" />
@@ -50,7 +51,17 @@
         </div>
         <!--ROw 2-->
         <nav class="navbar">
-            <a href="#">All Category</a>
+            <div class="nav-all-category" onclick="toggleDropdown()">
+                <i class="fa-solid fa-bars"></i> All Category
+                <div class="category-dropdown" id="categoryDropdown">
+                    <a href="#">Electronics</a>
+                    <a href="#">Clothing</a>
+                    <a href="#">Home & Garden</a>
+                    <a href="#">Sports</a>
+                    <a href="#">Toys</a>
+                </div>
+            </div>
+
             <a href="#">Hot offers</a>
             <a href="#">Gift boxes</a>
             <a href="#">Projects</a>
@@ -61,8 +72,14 @@
                 <select>
                     <option>English, USD</option>
                 </select>
-                <span>DE Ship to</span>
+                <span class="ship-to">
+                    Ship to
+                    <img src="images/DE@2x.png" alt="Germany" class="flag-icon" />
+                    <i class="fa-solid fa-chevron-down"></i>
+                </span>
+
             </div>
+
 
         </nav>
     </header>
@@ -70,7 +87,8 @@
     <main>
         <!--Breadcrumb-->
         <div class="breadcrumb">
-            <a href="#">Home</a> <a href="#">Clothing</a> <a href="#">Men's Wear</a> <span>Summer clothing</span>
+            <a href="index.html">Home</a> > <a href="products.html">Clothing</a> > <a href="products.html">Men's
+                Wear</a> > <span>Summer clothing</span>
         </div>
 
         <!-- Product Detail Section -->
@@ -79,15 +97,19 @@
             <!-- Left: Images -->
             <div class="product-images">
                 <div class="main-image">
-                    <img src="images/lol1.png" alt="product" />
+                   <img id="mainProductImg" src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=600&q=80" alt="product" />
                 </div>
                 <div class="thumbnail-images">
-                    <img src="images/lol1.png" alt="thumb1" />
-                    <img src="images/lol1.png" alt="thumb2" />
-                    <img src="images/lol1.png" alt="thumb3" />
-                    <img src="images/lol1.png" alt="thumb4" />
-                    <img src="images/lol1.png" alt="thumb5" />
-                    <img src="images/lol1.png" alt="thum" />
+                    <img src="https://images.unsplash.com/photo-1521369909029-2afed882baee?w=200&q=70" alt="cap"
+                        onclick="switchMainImg(this)" />
+                    <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=200&q=70" alt="folded clothes"
+                        onclick="switchMainImg(this)" />
+                    <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=200&q=70"
+                        alt="person wearing shirt" onclick="switchMainImg(this)" />
+                    <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=200&q=70"
+                        alt="white sweatshirt" onclick="switchMainImg(this)" />
+                    <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=200&q=70"
+                        alt="black t-shirt" onclick="switchMainImg(this)" />
                 </div>
             </div>
 
@@ -148,6 +170,23 @@
                         <span class="detail-value">2 years full warranty</span>
                     </div>
                 </div>
+                <!-- Size Selection -->
+                <div class="size-select-wrap">
+                    <label for="sizeSelect">Select Size:</label>
+                    <select id="sizeSelect">
+                        <option value="">Choose a size</option>
+                        <option value="S">Small (S)</option>
+                        <option value="M">Medium (M)</option>
+                        <option value="L">Large (L)</option>
+                        <option value="XL">Extra Large (XL)</option>
+                        <option value="XXL">Double XL (XXL)</option>
+                    </select>
+                </div>
+
+                <!-- Add to Cart -->
+                <button class="add-to-cart-btn" onclick="addToCart()">
+                    <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                </button>
             </div>
 
             <!-- Right: Supplier Info -->
@@ -177,17 +216,18 @@
                 <div class="tabs-left">
 
                     <div class="tabs">
-                        <button class="tab-btn active">Description</button>
-                        <button class="tab-btn">Reviews</button>
-                        <button class="tab-btn">Shipping</button>
-                        <button class="tab-btn">About seller</button>
+                        <button class="tab-btn active" onclick="switchTab('description', this)">Description</button>
+                        <button class="tab-btn" onclick="switchTab('reviews', this)">Reviews</button>
+                        <button class="tab-btn" onclick="switchTab('shipping', this)">Shipping</button>
+                        <button class="tab-btn" onclick="switchTab('about', this)">About seller</button>
                     </div>
-                    <div class="tab-content">
+                    <!-- Description Panel -->
+                    <div class="tab-content" id="tab-description">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                             labore
                             et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                            nisi ut
-                            aliquip ex ea commodo consequat. Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                            nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor, sit amet consectetur adipisicing
+                            elit.
                             Adipisci facere cumque beatae nostrum cupiditate, doloribus, alias sequi eos repellendus
                             dolorem quas reiciendis error veniam facilis atque vero laboriosam necessitatibus
                             explicabo?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit necessitatibus at
@@ -220,7 +260,6 @@
                                 <td>Memory</td>
                                 <td>36GB RAM</td>
                             </tr>
-
                         </table>
 
                         <ul class="features-list">
@@ -229,6 +268,69 @@
                             <li>Duis aute irure dolor in reprehenderit</li>
                             <li>Some great features name here</li>
                         </ul>
+                    </div>
+                    <!-- Reviews Panel -->
+                    <div class="tab-content" id="tab-reviews" style="display:none;">
+
+                        <div class="review-summary">
+                            <div class="review-score-big">9.3</div>
+                            <div>
+                                <div class="review-stars-big">★★★★★</div>
+                                <p class="review-count-text">Based on 32 reviews</p>
+                            </div>
+                        </div>
+
+                        <div class="review-card">
+                            <div class="review-avatar">JD</div>
+                            <div class="review-body">
+                                <div class="review-top-row">
+                                    <span class="review-name">John D.</span>
+                                    <span class="review-date">June 10, 2026</span>
+                                </div>
+                                <div class="review-stars">★★★★★</div>
+                                <p class="review-text">Great quality fabric, true to size. Would buy again.</p>
+                            </div>
+                        </div>
+
+                        <div class="review-card">
+                            <div class="review-avatar" style="background:#fde7c8; color:#b8741a;">SK</div>
+                            <div class="review-body">
+                                <div class="review-top-row">
+                                    <span class="review-name">Sara K.</span>
+                                    <span class="review-date">May 28, 2026</span>
+                                </div>
+                                <div class="review-stars">★★★★☆</div>
+                                <p class="review-text">Good product, delivery took a bit longer than expected.</p>
+                            </div>
+                        </div>
+
+                        <div class="review-card">
+                            <div class="review-avatar" style="background:#dcf5e3; color:#1f8a4c;">AR</div>
+                            <div class="review-body">
+                                <div class="review-top-row">
+                                    <span class="review-name">Ahmed R.</span>
+                                    <span class="review-date">May 15, 2026</span>
+                                </div>
+                                <div class="review-stars">★★★★★</div>
+                                <p class="review-text">Excellent material and stitching, highly recommend this seller.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Shipping Panel -->
+                    <div class="tab-content" id="tab-shipping" style="display:none;">
+                        <p>Shipping from: Berlin, Germany</p>
+                        <p>Estimated delivery: 15-20 business days</p>
+                        <p>Shipping cost calculated at checkout based on quantity and destination.</p>
+                    </div>
+
+                    <!-- About Seller Panel -->
+                    <div class="tab-content" id="tab-about" style="display:none;">
+                        <p>Guanjoi Trading LLC has been a verified supplier since 2018, specializing in apparel
+                            manufacturing for wholesale buyers worldwide.</p>
+                        <p>Response rate: 98% &nbsp; | &nbsp; On-time delivery: 95%</p>
                     </div>
 
                 </div>
@@ -415,6 +517,40 @@
         </div>
 
     </footer>
+
+    <script>
+        function switchTab(tabName, btn) {
+            document.querySelectorAll('.tab-content').forEach(function (panel) {
+                panel.style.display = 'none';
+            });
+            document.querySelectorAll('.tab-btn').forEach(function (b) {
+                b.classList.remove('active');
+            });
+            document.getElementById('tab-' + tabName).style.display = 'block';
+            btn.classList.add('active');
+        }
+
+        function addToCart() {
+            const size = document.getElementById('sizeSelect').value;
+            if (!size) {
+                alert('Please select a size before adding to cart.');
+                return;
+            }
+            alert('Added to cart! Size: ' + size);
+        }
+    </script>
+
+    <script>
+        function toggleDropdown() {
+            document.getElementById('categoryDropdown').classList.toggle('show');
+        }
+
+        function switchMainImg(thumb) {
+            document.getElementById('mainProductImg').src = thumb.src;
+            document.querySelectorAll('.thumbnail-images img').forEach(img => img.classList.remove('active-thumb'));
+            thumb.classList.add('active-thumb');
+        }
+    </script>
 </body>
 
 </html>

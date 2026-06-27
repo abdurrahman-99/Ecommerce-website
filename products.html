@@ -15,11 +15,12 @@
         <div class="top_bar">
 
             <!-- logo -->
-
-            <div class="logo">
-                <i class="fa-solid fa-bag-shopping"></i>
-                <span> Brand </span>
-            </div>
+            <a href="index.html" style="text-decoration:none; color:inherit;">
+                <div class="logo">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span> Brand </span>
+                </div>
+            </a>
             <!--search  bar-->
             <div class="Search_bar">
                 <input type="text" placeholder="Search" />
@@ -50,7 +51,16 @@
         </div>
         <!--ROw 2-->
         <nav class="navbar">
-            <a href="#">All Category</a>
+            <div class="nav-all-category" onclick="toggleDropdown()">
+                <i class="fa-solid fa-bars"></i> All Category
+                <div class="category-dropdown" id="categoryDropdown">
+                    <a href="#">Electronics</a>
+                    <a href="#">Clothing</a>
+                    <a href="#">Home & Garden</a>
+                    <a href="#">Sports</a>
+                    <a href="#">Toys</a>
+                </div>
+            </div>
             <a href="#">Hot offers</a>
             <a href="#">Gift boxes</a>
             <a href="#">Projects</a>
@@ -61,7 +71,12 @@
                 <select>
                     <option>English, USD</option>
                 </select>
-                <span>DE Ship to</span>
+                <span class="ship-to">
+                    Ship to
+                    <img src="images/DE@2x.png" alt="Germany" class="flag-icon" />
+                    <i class="fa-solid fa-chevron-down"></i>
+                </span>
+
             </div>
 
         </nav>
@@ -69,7 +84,8 @@
 
     <main>
         <div class="breadcrumb">
-            <a href="#">Home</a> > <a href="#">Clothing</a> > <a href="#">Men's wear</a> > <span>Summer clothing</span>
+            <a href="index.html">Home</a> > <a href="#">Clothing</a> > <a href="#">Men's wear</a> > <span>Summer
+                clothing</span>
         </div>
 
         <div class="products-page">
@@ -86,10 +102,12 @@
                 </div>
                 <div class="filter-group">
                     <h4>Brands</h4>
-                    <label><input type="checkbox" />Metallic</label>
+                    <label><input type="checkbox" />Samsung</label>
                     <label><input type="checkbox" /> Apple</label>
                     <label><input type="checkbox" /> Huawei</label>
                     <label><input type="checkbox" /> Lenovo</label>
+                    <label><input type="checkbox" /> Pocco</label>
+
                     <a href="#" class="see-all">See all</a>
                 </div>
 
@@ -135,13 +153,19 @@
                 <div class="product-header">
                     <p>12,911 items in <strong>Mobile accessory</strong></p>
                     <div class="header-right">
-                        <label><input type="checkbox" />Verified only</label>
+                        <label><input type="checkbox" checked />Verified only</label>
                         <select>
                             <option>Featured</option>
                         </select>
+                        <div class="view-toggle">
+                            <button class="view-btn active" onclick="setView('grid', this)"><i
+                                    class="fa-solid fa-grip"></i></button>
+                            <button class="view-btn" onclick="setView('list', this)"><i
+                                    class="fa-solid fa-bars"></i></button>
+                        </div>
                     </div>
                 </div>
-                <div class="product-list-items">
+                <div class="product-list-items" id="productList">
                     <div class="product-row">
                         <img src="images/image 33.png" alt="product" />
                         <div class="product-info">
@@ -158,7 +182,7 @@
                             <p class="discription">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat
                                 debitis nostrum omnis veritatis assumenda consectetur mollitia. Reiciendis qui voluptas
                                 beatae blanditiis doloribus saepe vero quasi libero ipsa, error corrupti voluptates.</p>
-                            <a href="#" class="view-details">View Details</a>
+                            <a href="product-detail.html" class="view-details">View Details</a>
                         </div>
                         <i class="fa-regular   fa-heart wishlist-icon"></i>
                     </div>
@@ -168,7 +192,7 @@
                         <div class="product-info">
                             <h4>GoPro HERO6 4k Action Camera- Black</h4>
                             <div class="price-row">
-                                <span class="price">$998.00</span>
+                                <span class="price">$959.00</span>
                             </div>
 
                             <div class="rating-row">
@@ -179,7 +203,7 @@
                             <p class="discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur aut
                                 rerum tempora nisi ullam ut, saepe provident nulla neque labore non dolor optio vel
                                 dicta, quaerat sed possimus doloremque similique.</p>
-                            <a href="#" class="view-details">View details</a>
+                            <a href="product-detail.html" class="view-details">View details</a>
                         </div>
                         <i class="fa-regular fa-heart wishlist-icon"></i>
                     </div>
@@ -187,9 +211,9 @@
                     <div class="product-row">
                         <img src="images/image 32.png" />
                         <div class="product-info">
-                            <h4>GoPro HERO6 4k Action Camera- Black</h4>
+                            <h4>Smart tablets 3k available for gaming</h4>
                             <div class="price-row">
-                                <span class="price">$998.00</span>
+                                <span class="price">$798.00</span>
                             </div>
 
                             <div class="rating-row">
@@ -200,7 +224,7 @@
                             <p class="discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur aut
                                 rerum tempora nisi ullam ut, saepe provident nulla neque labore non dolor optio vel
                                 dicta, quaerat sed possimus doloremque similique.</p>
-                            <a href="#" class="view-details">View details</a>
+                            <a href="product-detail.html" class="view-details">View details</a>
                         </div>
                         <i class="fa-regular fa-heart wishlist-icon"></i>
                     </div>
@@ -208,9 +232,9 @@
                     <div class="product-row">
                         <img src="images/image 34.png" />
                         <div class="product-info">
-                            <h4>GoPro HERO6 4k Action Camera- Black</h4>
+                            <h4>HP EliteBook 630 G9-12th Generation Core I3 Business class performance</h4>
                             <div class="price-row">
-                                <span class="price">$998.00</span>
+                                <span class="price">$497.00</span>
                             </div>
 
                             <div class="rating-row">
@@ -221,7 +245,7 @@
                             <p class="discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur aut
                                 rerum tempora nisi ullam ut, saepe provident nulla neque labore non dolor optio vel
                                 dicta, quaerat sed possimus doloremque similique.</p>
-                            <a href="#" class="view-details">View details</a>
+                            <a href="product-detail.html" class="view-details">View details</a>
                         </div>
                         <i class="fa-regular fa-heart wishlist-icon"></i>
                     </div>
@@ -229,9 +253,9 @@
                     <div class="product-row">
                         <img src="images/8.png" />
                         <div class="product-info">
-                            <h4>GoPro HERO6 4k Action Camera- Black</h4>
+                            <h4>Digital Smart Watches 13th-Generation Best quality</h4>
                             <div class="price-row">
-                                <span class="price">$998.00</span>
+                                <span class="price">$899.00</span>
                             </div>
 
                             <div class="rating-row">
@@ -242,7 +266,7 @@
                             <p class="discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur aut
                                 rerum tempora nisi ullam ut, saepe provident nulla neque labore non dolor optio vel
                                 dicta, quaerat sed possimus doloremque similique.</p>
-                            <a href="#" class="view-details">View details</a>
+                            <a href="product-detail.html" class="view-details">View details</a>
                         </div>
                         <i class="fa-regular fa-heart wishlist-icon"></i>
                     </div>
@@ -250,7 +274,7 @@
                     <div class="product-row">
                         <img src="images/image 29.png" />
                         <div class="product-info">
-                            <h4>GoPro HERO6 4k Action Camera- Black</h4>
+                            <h4>Headphones outstandard quality, clear sound and good battery-time</h4>
                             <div class="price-row">
                                 <span class="price">$998.00</span>
                             </div>
@@ -263,7 +287,7 @@
                             <p class="discription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur aut
                                 rerum tempora nisi ullam ut, saepe provident nulla neque labore non dolor optio vel
                                 dicta, quaerat sed possimus doloremque similique.</p>
-                            <a href="#" class="view-details">View details</a>
+                            <a href="product-detail.html" class="view-details">View details</a>
                         </div>
                         <i class="fa-regular fa-heart wishlist-icon"></i>
                     </div>
@@ -293,7 +317,10 @@
             <h3>Subscribe on our newsletter</h3>
             <p>Get daily news on upcoming offersfrom many suppliers all over the world</p>
             <div class="newsletter-form">
-                <input type="email" placeholder="Email" />
+                <div class="email-input-wrap">
+                    <i class="fa-regular fa-envelope"></i>
+                    <input type="email" placeholder="Email" />
+                </div>
                 <button>Subscibe</button>
             </div>
         </section>
@@ -381,6 +408,25 @@
         </div>
 
     </footer>
+
+    <script>
+        function toggleDropdown() {
+            document.getElementById('categoryDropdown').classList.toggle('show');
+        }
+
+        function setView(type, btn) {
+            document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const list = document.getElementById('productList');
+            if (type === 'grid') {
+                list.classList.add('grid-mode');
+            } else {
+                list.classList.remove('grid-mode');
+            }
+
+        }
+    </script>
 </body>
 
 </html>
